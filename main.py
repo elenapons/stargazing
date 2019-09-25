@@ -1,23 +1,16 @@
 """
 # Star Watch
 
-Check what are the best days to watch stars taking into account the moon cycle and the weather. 
-
-Command line options:
-- from: starting day (defaults to today)
-- during: number of days to consider (defaults to 7 days)
+Check what are the best days to stargaze in Mieres taking into account the moon cycle and the weather. 
 """
 
-import click
 from pprint import pprint
 import requests
 import pylunar
 import datetime
 
-@click.command()
-@click.option('--from', 'from_', default='today', type=click.Choice(['today', 'tomorrow', 'day after tomorrow']), help='day from which you want to have the forecast')
-@click.option('--during', default=7, help='number of days of the forecast: from 1 to 10')
-def main(from_, during):
+
+def main():
     url = "https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/17105"
     querystring = {"api_key":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlcG9uc2NAZ21haWwuY29tIiwianRpIjoiZjJmYzNhYTEtYmM4OC00ZTkyLTgyMTctOTI0MzdiZTI5NTkxIiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE1NjkyNjEyNTAsInVzZXJJZCI6ImYyZmMzYWExLWJjODgtNGU5Mi04MjE3LTkyNDM3YmUyOTU5MSIsInJvbGUiOiIifQ.pD9llUZtFQqJCwpDjj8BG_deFOm7R5tSoJNxkBFWOfU"}
     headers = {
