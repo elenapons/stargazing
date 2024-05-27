@@ -21,10 +21,10 @@ These ratings help you plan your stargazing activities by indicating the nights 
 
 ## Getting Started
 
-To run the app, make sure you install the requirements.
+To run the app, make sure you install the requirements first.
 
-$ python -m pip install -r requirements.txt
+    $ python -m pip install -r requirements.txt
 
-Now you can run the app.
+Then you can run the app.
 
-$ python main.py
+    $ python main.py
